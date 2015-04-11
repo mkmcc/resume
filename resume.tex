@@ -1,0 +1,309 @@
+\documentclass[11pt]{article}
+
+% basic packages
+\usepackage{graphicx}
+\usepackage[letterpaper, 
+hmargin={0.5in,0.5in}, 
+vmargin={0.5in,0.5in}]{geometry}
+
+\usepackage{soul}
+\usepackage{paralist,revnum}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+
+\usepackage[scaled=0.85]{UniversStd}
+\usepackage{WarnockPro}         % also try ChaparralPro
+\usepackage{marvosym}
+
+% tweaks
+\setlength{\overfullrule}{5pt}
+\setlength{\parindent}{0em}
+\newcommand{\til}{\char158}
+\newcommand{\mybullet}{\ornament{19}} % 6, 8 are flashier
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\newcommand{\mysection}[1]{%
+  \currentpdfbookmark{#1}{#1}
+  \noindent{\Large \color{webbrown} \textsc{#1}}\\[-2ex]
+  {\color{halfgray} \hrule}
+  \vspace*{1ex}}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{enumerate}[#1]}{\end{enumerate}%
+         \vspace{-.6\baselineskip}}
+
+\newenvironment{innerlist}[1][\enskip\mybullet]%
+{\begin{compactitem}[#1]}{\end{compactitem}}
+
+% links and color
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{halfgray}{gray}{0.55}
+\definecolor{medgray}{gray}{0.3}
+\definecolor{webgreen}{rgb}{0.10,0.29,0.19}
+\definecolor{webbrown}{rgb}{.5,.2,0}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.4}
+
+\hypersetup{colorlinks,           
+  breaklinks=true,
+  linkcolor=darkblue,
+  urlcolor=webgreen,
+  anchorcolor=darkblue,
+  citecolor=darkblue,
+  pdfauthor={Michael McCourt},
+  pdftitle={curriculum vitae},
+  pdfcreator={pdflatex}}
+
+\newcommand{\daterange}[2]{%
+\begin{minipage}[t]{0.25\textwidth}
+{\raggedleft 
+\textsc{#1}--- \\ 
+\textsc{#2}\phantom{---}
+
+}
+\end{minipage}
+}
+
+\newcommand\email{\href{mailto:mkmcc@astro.berkeley.edu}%
+  {mkmcc@astro.berkeley.edu}}
+\newcommand\web{\href{http://astro.berkeley.edu/~mkmcc}%
+  {astro.berkeley.edu/\til{}mkmcc}}
+
+% institutions
+\newcommand\stanford{\href{http://www.stanford.edu/}%
+  {Stanford University}}
+\newcommand\bstanford{\href{http://www.stanford.edu/}%
+  {\textit{Stanford University}}}
+
+\newcommand\berkeley{\href{http://www.berkeley.edu/}%
+  {UC Berkeley}}
+\newcommand\bberkeley{\href{http://www.berkeley.edu/}%
+  {\textit{UC Berkeley}}}
+
+\newcommand\glam{\href{http://0-www.stanford.edu.ilsprod.lib.neu.edu:80/group/glam/}%
+  {Geballe Laboratory for Advanced Materials}}
+
+\newcommand\kipac{\href{http://www-group.slac.stanford.edu/KIPAC/}%
+  {Kavli Institute for Particle Astrophysics and Cosmology}  (KIPAC)}
+
+\newcommand\slac{\href{http://slac.stanford.edu}%
+  {Stanford Linear Accelerator Center} (SLAC)}
+
+\newcommand\tac{\href{http://astro.berkeley.edu/tac/}%
+  {Theoretical Astrophysics Ceneter}}
+
+
+
+% actual document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\raggedbottom
+\pagestyle{empty}
+
+% title and contact
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\contact}{%
+\Telefon \, 310-923-2656 \quad\quad 
+\Letter \, \email \quad\quad
+\ComputerMouse \, \web}
+
+\newlength{\titlewidth}
+\settowidth{\titlewidth}{\contact}
+
+\hfill
+%% {\fontsize{50}{50}\selectfont \color{lightgray} \raisebox{-12pt}{\ornament{29}}}%
+%% \quad
+\begin{minipage}{\titlewidth}
+  \centering
+  {\huge 
+    \color{webbrown} 
+    \textls*[300]{\textsc{Michael{\,\,}K.{\,\,}McCourt}}} \\[1.2ex]
+  {\color{medgray} B-20 Hearst Field Annex, 
+    Astronomy Department, Berkeley, CA,
+    94720-3411} \\
+  {\color{medgray} %
+    \contact}
+\end{minipage}%
+%% \quad
+%% {\fontsize{50}{50}\selectfont \color{lightgray} \raisebox{-12pt}{\ornament{30}}}
+\hfill
+\vspace*{2\baselineskip}
+
+
+
+%% Skills
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mysection{Technical Skills}
+%
+\begin{outerlist}
+\item[] Programming
+\begin{innerlist}
+  \item proficient in C, Ruby, Mathematica, Shell Scripts
+  \item quickly learned enough Python to write a research paper using it
+  \item portfolio ranges from hard-core scientific computation
+    (e.\,g., adding plasma physics to an MHD code to be run on a
+    supercomputer) to building research tools (e.\,g., my bibliography
+    management tool ``\href{http://mkmcc.github.io/software/bibslurp.html}{bibslurp}.'')
+\end{innerlist}
+
+\item[] Modeling
+\begin{innerlist}
+  \item quickly translate between equations and ideas
+  \item build simple but predictive models of complex systems,
+    enabling new discoveries
+\end{innerlist}
+
+
+\item[] Communication
+\begin{innerlist}
+  \item 1\textsuperior{st} or 2\textsuperior{nd} author of 10
+    scientific papers, which have been cited more than 185 times.
+  \item Regularly complimented on the clarity of my reasoning and
+    writing; one reviewer of a grant application thanked me for an
+    interesting proposal; another grant proposal I authored is now
+    used by the granting agency as the example well-written proposal.
+  \item Invited speaker to 19 conferences and seminars
+\end{innerlist}
+
+\end{outerlist}
+
+\vspace*{2\baselineskip}
+
+
+
+%% Scientific Career
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.5\linewidth}
+\mysection{Scientific Career}
+%
+\daterange{Sept 2014}{Aug 2015}
+\hfill
+\begin{minipage}[t]{0.7\textwidth}
+\textsc{ITC Fellow}, Harvard University
+%
+\begin{innerlist}
+\item received prestigious independent research fellowship
+\item declined fellowship offers from Princeton University, Stanford
+  University, and UC Santa Barbara
+\end{innerlist}
+%
+\end{minipage}
+
+\vspace*{\baselineskip}
+
+\daterange{Aug 2008}{Aug 2014}
+\hfill
+\begin{minipage}[t]{0.7\textwidth}
+\textsc{PhD Student}, UC Berkeley
+%
+\begin{innerlist}
+\item recipient of both department research awards available to
+  graduate students
+\end{innerlist}
+%
+\end{minipage}
+
+\vspace*{\baselineskip}
+
+\begin{innerlist}
+\item Worked in 9 different research areas, authoring papers and giving
+invited talks in all of them.
+\end{innerlist}
+
+\end{minipage}
+%
+\hfill
+%
+%% Education and Awards
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.45\linewidth}
+\mysection{Education and Awards}
+%
+\begin{tabular}{ll}
+  \begin{minipage}[t]{0.25\linewidth}
+    \textsc{May 2014}
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.6\linewidth}
+    \RaggedRight
+    Ph.\,D. in \textsc{Astrophysics}, UC Berkeley
+  \end{minipage}
+  \\ \\
+  %
+  \begin{minipage}[t]{0.25\linewidth}
+    \textsc{April 2014}
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.6\linewidth}
+    \RaggedRight
+    Mary Elizabeth Uhl Prize, UC Berkeley
+  \end{minipage}
+  \\ \\
+  %
+  \begin{minipage}[t]{0.25\linewidth}
+    \textsc{May 2012}
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.6\linewidth}
+    \RaggedRight
+    The Robert J. Trumpler Graduate Student Excellence Award, UC Berkeley
+  \end{minipage}
+  \\ \\
+  %
+  \begin{minipage}[t]{0.25\linewidth}
+    \textsc{Nov. 2011}
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.6\linewidth}
+    \RaggedRight
+    Chandra Observatory theory grant
+    \textsc{tm2-13004x}
+  \end{minipage}
+  \\ \\
+  %
+  \begin{minipage}[t]{0.25\linewidth}
+    \textsc{May 2007}
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.6\linewidth}
+    \RaggedRight
+    Rose Hills Foundation Award for Undergraduate Research
+  \end{minipage}
+  \\ \\
+  %
+  \begin{minipage}[t]{0.25\linewidth}
+    \textsc{May 2006}
+  \end{minipage}
+  & 
+  \begin{minipage}[t]{0.6\linewidth}
+    \RaggedRight 
+    VPUE Grant for Undergraduate Research, Stanford University
+  \end{minipage}
+\end{tabular}
+
+\end{minipage}
+
+
+
+% Postamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vfill
+\begin{minipage}[h!]{\linewidth}
+  \hspace*{\fill}
+  \begin{center}
+    {\scriptsize  Last updated: \today \\
+      current version: 
+      \href{http://astro.berkeley.edu/~mkmcc/cv.pdf}%
+      {astro.berkeley.edu/\til{}mkmcc/cv.pdf}}
+  \end{center}
+  \hspace*{\fill}
+\end{minipage}
+\end{document}
+
+% Local Variables:
+%   compile-command:
+%    "rubber -d --warn all resume.tex"
+% End:

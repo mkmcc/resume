@@ -3,8 +3,8 @@
 % basic packages
 \usepackage{graphicx}
 \usepackage[letterpaper, 
-hmargin={0.5in,0.5in}, 
-vmargin={0.5in,0.5in}]{geometry}
+hmargin={0.7in,0.7in}, 
+vmargin={0.7in,0.7in}]{geometry}
 
 \usepackage{soul}
 \usepackage{paralist,revnum}
@@ -58,10 +58,19 @@ vmargin={0.5in,0.5in}]{geometry}
   pdfcreator={pdflatex}}
 
 \newcommand{\daterange}[2]{%
-\begin{minipage}[t]{0.25\textwidth}
+\begin{minipage}[t]{1in}
 {\raggedleft 
 \textsc{#1}--- \\ 
 \textsc{#2}\phantom{---}
+
+}
+\end{minipage}
+}
+
+\newcommand{\datealt}[1]{%
+\begin{minipage}[t]{1in}
+{\raggedleft 
+\textsc{#1}\phantom{---}
 
 }
 \end{minipage}
@@ -73,6 +82,10 @@ vmargin={0.5in,0.5in}]{geometry}
   {astro.berkeley.edu/\til{}mkmcc}}
 \newcommand\github{\href{https://github.com/mkmcc}%
   {github.com/mkmcc}}
+\newcommand\arxiv{\href{http://arxiv.org/a/mccourt_m_1}%
+  {arxiv.org/a/mccourt\_m\_1}}
+
+
 
 % institutions
 \newcommand\stanford{\href{http://www.stanford.edu/}%
@@ -108,191 +121,150 @@ vmargin={0.5in,0.5in}]{geometry}
 % title and contact
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\contact}{%
-\Telefon \, 310-923-2656 \quad\quad 
-\Letter \, \email \quad\quad
-\ComputerMouse \, \web \, \quad\quad
-\raisebox{-2pt}{\includegraphics[height=9pt]{blacktocat.pdf}} \github}
+\Telefon \, 310-923-2656 \quad 
+\Letter \, \email \quad
+\ComputerMouse \, \web \\
+\raisebox{-3pt}{\includegraphics[height=11pt]{blacktocat.pdf}} \github
+\,\quad
+\raisebox{-3pt}{\includegraphics[height=11pt]{arxiv.pdf}} \arxiv}
 
 \newlength{\titlewidth}
-\settowidth{\titlewidth}{\contact}
+%\settowidth{\titlewidth}{\contact}
+\setlength{\titlewidth}{\linewidth}
 
 \hfill
-%% {\fontsize{50}{50}\selectfont \color{lightgray} \raisebox{-12pt}{\ornament{29}}}%
-%% \quad
 \begin{minipage}{\titlewidth}
   \centering
   {\huge 
     \color{webbrown} 
-    \textls*[300]{\textsc{Michael{\,\,}K.{\,\,}McCourt}}} \\[1.2ex]
-  {\color{medgray} B-20 Hearst Field Annex, 
-    Astronomy Department, Berkeley, CA,
-    94720-3411} \\
+    \textls*[300]{\textsc{Michael{\,\,}K.{\,\,}McCourt}}} \\[2ex]
+  %% {\color{medgray} 
+  %%   Harvard-Smithsonian Center for Astrophysics,
+  %%   60 Garden Street, 
+  %%   Cambridge, MA 02138} \\
   {\color{medgray} %
     \contact}
 \end{minipage}%
-%% \quad
-%% {\fontsize{50}{50}\selectfont \color{lightgray} \raisebox{-12pt}{\ornament{30}}}
 \hfill
-\vspace*{2\baselineskip}
+
+\vspace*{\baselineskip}
+
+%% \begin{center}
+%%   \textit{Astrophysics PhD with expertise in programming and
+%%     predictive modeling of complex systems.\\  Seeking technical or
+%%     scientific role in an environmentally-focused company.}
+%% \end{center}
+
+%% \vspace*{\baselineskip}
 
 
 
 %% Skills
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mysection{Technical Skills}
+%
+\mysection{Skills and Technical Proficiencies}
 %
 \begin{outerlist}
-\item[] Programming
+\item[] \textbf{Modeling}
 \begin{innerlist}
-  \item proficient in C, Ruby, Mathematica, Shell Scripts
-  \item quickly learned enough Python to write a research paper using it
-  \item portfolio ranges from hard-core scientific computation
-    (e.\,g., adding plasma physics to an MHD code to be run on a
-    supercomputer) to building research tools (e.\,g., my bibliography
-    management tool ``\href{http://mkmcc.github.io/software/bibslurp.html}{bibslurp}.'')
+  \item Specialize in building simple but predictive ``toy'' models
+    for complex systems, focusing only on the most salient features.
+  \item Applied modeling to diverse research
+    topics, ranging from the largest structures in the universe to
+    earth-mass gas clouds around black holes.
+  \item Skilled in rapidly translating ideas into equations and vice-versa.
 \end{innerlist}
 
-\item[] Modeling
+\item[] \textbf{Programming} \\
+Proficient in C, Ruby, Mathematica, Lisp, Shell Scripts.  Experience
+with Python, including scipy and numpy.
 \begin{innerlist}
-  \item quickly translate between equations and ideas
-  \item build simple but predictive models of complex systems,
-    enabling new discoveries
+  \item Implemented significant changes (e.g. plasma physics) to
+    Athena, a high-performance scientific code running on
+    supercomputers.
+  \item Wrote software for scientific studies, including:
+    \begin{innerlist}
+      \item[-] Statistical data fitting using Markov Chain Monte Carlo simulations;
+      \item[-] Calculation of gravitational torques to identify unstable
+        orbits in disks of stars;
+      \item[-] Integrating 1-dimensional models of massive galaxies
+    \end{innerlist}
+  \item Created open-source tools for simplifying daily scientific
+    tasks, including:
+    \begin{innerlist}
+      \item[-]
+        ``\href{http://mkmcc.github.io/software/gnuplot-mode.html}{gnuplot-mode},''
+        a package for editing plots, downloaded by nearly 3,000
+        scientists to date;
+      \item[-]
+        ``\href{http://mkmcc.github.io/software/bibslurp.html}{bibslurp},''
+        a tool for automatically making bibliographies from the
+        standard NASA database, adopted by 150+ scientists
+    \end{innerlist}
 \end{innerlist}
 
-
-\item[] Communication
+\item[] \textbf{Communication}
 \begin{innerlist}
-  \item 1\textsuperior{st} or 2\textsuperior{nd} author of 10
-    scientific papers, which have been cited more than 185 times.
-  \item Regularly complimented on the clarity of my reasoning and
-    writing; one reviewer of a grant application thanked me for an
-    interesting proposal; another grant proposal I authored is now
-    used by the granting agency as the example well-written proposal.
   \item Invited speaker to 19 conferences and seminars
+  \item Regularly complimented on the clarity of my reasoning and
+    writing; one proposal for supercomputer time was selected by the granting agency as their
+    published example of a well-written application
+  \item Selected as a referee for five academic journals, including
+    \textit{Nature Letters}
 \end{innerlist}
 
 \end{outerlist}
 
-\vspace*{2\baselineskip}
-
-
+\blankline
 
 %% Scientific Career
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{minipage}[t]{0.5\linewidth}
-\mysection{Scientific Career}
 %
-\daterange{Sept 2014}{Aug 2015}
-\hfill
-\begin{minipage}[t]{0.7\textwidth}
-\textsc{ITC Fellow}, Harvard University
+\mysection{Experience and Education}
+%
+
+\begin{innerlist}
+  \item Authored 10 peer-reviewed scientific papers cited nearly 200 times
+  \item Conducted self-directed research in 9 different areas
+\end{innerlist}
+
+\blankline
+
+\textbf{ITC Fellow}, Harvard University\hfill\textsc{Sept 2014---}present
 %
 \begin{innerlist}
-\item {\RaggedRight received prestigious independent research fellowship}
-\item {\RaggedRight declined fellowship offers from Princeton University, Stanford
-  University, and UC Santa Barbara}
+\item {\RaggedRight Recipient of prestigious independent research fellowship.}
 \end{innerlist}
 %
-\end{minipage}
 
 \vspace*{\baselineskip}
 
-\daterange{Aug 2008}{Aug 2014}
-\hfill
-\begin{minipage}[t]{0.7\textwidth}
-\textsc{PhD Student}, UC Berkeley
+\textbf{PhD Student, Astrophysics}, UC Berkeley.  (\textit{PhD awarded May 2014})\hfill\textsc{{Aug 2008---Aug 2014}}
 %
 \begin{innerlist}
-\item recipient of both department research awards available to
-  graduate students
+\item {\RaggedRight Recipient of both department awards for
+  outstanding graduate student research.}
 \end{innerlist}
 %
-\end{minipage}
 
 \vspace*{\baselineskip}
 
+\textbf{MA, Astrophysics}, UC Berkeley\hfill\textsc{{May 2010}}
+%
+
+\vspace*{\baselineskip}
+
+\textbf{BS, Physics}, Stanford University\hfill\textsc{{May 2008}}
 \begin{innerlist}
-\item Worked in 9 different research areas, authoring papers and giving
-invited talks in all of them.
+\item {\RaggedRight Concentration in theoretical physics.}
 \end{innerlist}
-
-\end{minipage}
 %
-\hfill
 %
-%% Education and Awards
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{minipage}[t]{0.45\linewidth}
-\mysection{Education and Awards}
-%
-\begin{tabular}{ll}
-  \begin{minipage}[t]{0.25\linewidth}
-    \textsc{May 2014}
-  \end{minipage}
-  & 
-  \begin{minipage}[t]{0.6\linewidth}
-    \RaggedRight
-    Ph.\,D. in \textsc{Astrophysics}, UC Berkeley
-  \end{minipage}
-  \\ \\
-  %
-  \begin{minipage}[t]{0.25\linewidth}
-    \textsc{April 2014}
-  \end{minipage}
-  & 
-  \begin{minipage}[t]{0.6\linewidth}
-    \RaggedRight
-    Mary Elizabeth Uhl Prize, UC Berkeley
-  \end{minipage}
-  \\ \\
-  %
-  \begin{minipage}[t]{0.25\linewidth}
-    \textsc{May 2012}
-  \end{minipage}
-  & 
-  \begin{minipage}[t]{0.6\linewidth}
-    \RaggedRight
-    The Robert J. Trumpler Graduate Student Excellence Award, UC Berkeley
-  \end{minipage}
-  \\ \\
-  %
-  \begin{minipage}[t]{0.25\linewidth}
-    \textsc{Nov. 2011}
-  \end{minipage}
-  & 
-  \begin{minipage}[t]{0.6\linewidth}
-    \RaggedRight
-    Chandra Observatory theory grant
-    \textsc{tm2-13004x}
-  \end{minipage}
-  \\ \\
-  %
-  \begin{minipage}[t]{0.25\linewidth}
-    \textsc{May 2007}
-  \end{minipage}
-  & 
-  \begin{minipage}[t]{0.6\linewidth}
-    \RaggedRight
-    Rose Hills Foundation Award for Undergraduate Research
-  \end{minipage}
-  \\ \\
-  %
-  \begin{minipage}[t]{0.25\linewidth}
-    \textsc{May 2006}
-  \end{minipage}
-  & 
-  \begin{minipage}[t]{0.6\linewidth}
-    \RaggedRight 
-    VPUE Grant for Undergraduate Research, Stanford University
-  \end{minipage}
-\end{tabular}
-
-\end{minipage}
-
 
 
 % Postamble
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\enlargethispage{3\baselineskip}
 \vfill
 \begin{minipage}[h!]{\linewidth}
   \hspace*{\fill}
@@ -304,6 +276,44 @@ invited talks in all of them.
   \end{center}
   \hspace*{\fill}
 \end{minipage}
+
+
+
+\clearpage
+
+% Research Achievements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newgeometry{margin=1in}
+\mysection{Key Research Accomplishments}
+%
+\vspace*{\baselineskip}
+%
+Much of my research has focused on galaxy clusters, which are the
+largest and most recent structures to form in the universe.  For more
+detailed information and visuals, please visit my website:
+\href{http://astro.berkeley.edu/~mkmcc/research/}{astro.berkeley.edu/\til{}mkmcc/research}
+
+\begin{outerlist}
+  \item Showed that clouds of cold gas can condense like rain in the
+    hot atmospheres of galaxy clusters; this process fuels the growth
+    of galaxies in clusters and determining the maximum mass of
+    galaxies in the universe.  My research overturned a paradigm about
+    thermal instability which had been in place for more than 20
+    years.
+  \item Discovered that gas in galaxy clusters may be vigorously
+    ``boiling,'' contrary to what had been found in previous studies.
+  \item Showed that the unexplained range of temperatures inside
+    galaxy clusters is in fact determined by variations in their
+    formation histories.
+  \item Showed that clouds of cold gas in the center of the Milky Way
+    Galaxy may survive longer than had previously been thought.
+    Outlined a method for using these clouds to study the unknown
+    physics of gas falling into the super-massive black hole in our
+    galactic center.
+\end{outerlist}
+
+\restoregeometry
+
 \end{document}
 
 % Local Variables:
